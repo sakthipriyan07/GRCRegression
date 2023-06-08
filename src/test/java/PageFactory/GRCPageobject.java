@@ -160,6 +160,20 @@ public class GRCPageobject extends HelpdeskPageobject{
 	@FindBy(xpath = "//img[@alt='closeIcon']")
 	public static WebElement Closepopup;
 	
+	@FindBy(xpath = "//button[@id='2']")
+	public static WebElement Slide1;
+	
+	@FindBy(xpath = "//button[@id='3']")
+	public static WebElement Slide2;
+	
+	@FindBy(xpath = "//button[@id='4']")
+	public static WebElement Slide3;
+	
+	@FindBy(xpath = "(//div[@class='styles_btnWrap__auxlS '])[1]/child::button")
+	public static WebElement updatepersonalprofile;
+	
+	@FindBy(xpath = "//input[@name='name']")
+	public static WebElement personalprofilename;
 	
 	
 
