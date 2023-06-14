@@ -127,7 +127,7 @@ public class GRCRegressionRun {
 //		grcregression.ComplianceReminderMail(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
 //	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
 		
-	}
+	} 
 
 	@AfterClass
 	public void close() {
