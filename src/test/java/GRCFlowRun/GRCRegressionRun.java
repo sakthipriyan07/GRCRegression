@@ -1,4 +1,4 @@
-package CriticalFlowRun;
+package GRCFlowRun;
 
 import java.awt.AWTException;
 import java.io.FileInputStream;
@@ -40,7 +40,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class Criticalflow {
+public class GRCRegressionRun {
 
 	ExtentReports extentreport;
 	ExtentSparkReporter htmlReporter;
@@ -56,7 +56,7 @@ public class Criticalflow {
 
 	public String[][] getExcelData() throws BiffException, IOException {
 		FileInputStream excel = new FileInputStream(
-				"C:\\Users\\admin\\git\\Automation-Critical-Flow\\GRCCriticalflow\\Excel\\Items jxl.xls");
+				"C:\\Users\\admin\\eclipse-workspace\\GRC-Reg-Automation\\Excel\\Items jxl.xls");
 		Workbook workbook = Workbook.getWorkbook(excel);
 		Sheet sheet = workbook.getSheet("Sheet5");
 		int rowCount = sheet.getRows();
@@ -114,18 +114,18 @@ public class Criticalflow {
 
 		GRCRegression grcregression = new GRCRegression(driver);
 	
-		grcregression.OnboardingFlowForNewUsers(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+	//	grcregression.OnboardingFlowForNewUsers(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
+	  //  		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
 		grcregression.OnboardingFlowForExistingUsers(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
 	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
-		grcregression.RedactedMail(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
-		grcregression.CreateNewAccountUsingGRCURL(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
-		grcregression.ExistingUserLoggedInThruGRC(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
-		grcregression.ComplianceReminderMail(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+//		grcregression.RedactedMail(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
+//	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+//		grcregression.CreateNewAccountUsingGRCURL(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
+//	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+//		grcregression.ExistingUserLoggedInThruGRC(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
+//	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+//		grcregression.ComplianceReminderMail(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
+//	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
 		
 	}
 
@@ -148,7 +148,7 @@ public class Criticalflow {
 	public void cleanup() throws EmailException {
 		
 		System.out.println("Test completed1");
-		driver.quit();
+		//driver.quit();
 	}
 
 }

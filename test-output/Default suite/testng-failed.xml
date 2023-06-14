@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CriticalFlowRun.Criticalflow">
+      <class name="GRCFlowRun.GRCRegressionRun">
         <methods>
-          <include name="Customercreation100" invocation-numbers="0"/>
+          <include name="url"/>
+          <include name="Login"/>
           <include name="cleanup"/>
           <include name="Max"/>
           <include name="Report"/>
-          <include name="Login"/>
-          <include name="url"/>
           <include name="close"/>
+          <include name="Customercreation100" invocation-numbers="0"/>
         </methods>
-      </class> <!-- CriticalFlowRun.Criticalflow -->
+      </class> <!-- GRCFlowRun.GRCRegressionRun -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

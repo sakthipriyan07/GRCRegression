@@ -133,6 +133,9 @@ public class GRCPageobject extends HelpdeskPageobject{
 	@FindBy(xpath = "(//button[contains(text(),'Buy now')])[1]")
 	public static WebElement BuyNowService;
 	
+	@FindBy(xpath = "(//div[@class='styles_actions__3cTZr']/child::button)[1]")
+	public static WebElement GetItNowCompliancecalender;
+	
 	@FindBy(xpath = "//button[contains(text(),'Continue')]")
 	public static WebElement Continueservice;
 	
@@ -145,7 +148,7 @@ public class GRCPageobject extends HelpdeskPageobject{
 	@FindBy(xpath = "//div[@class='styles_replyBoxButtons__kRj9v']/child::span/child::button")
 	public static WebElement Sendmessage;
 	
-	@FindBy(xpath = "//button[contains(text(),'Continue ')]")
+	@FindBy(xpath = "//button[contains(text(),'Continue')]")
 	public static WebElement ContinueGST;
 	
 	@FindBy(xpath = "//p[contains(text(),'Yes, continue')]")
