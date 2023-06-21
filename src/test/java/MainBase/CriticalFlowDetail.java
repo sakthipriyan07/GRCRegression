@@ -52,10 +52,8 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 	Robot robot;
 	ExtentTest test;
 
-	public CriticalFlowDetail(WebDriver driver, String Helpdeskuserid, String helpdeskpassword, String notesname,
-			String notedescrption, String QNameOfCustomer, String qaddress, String qpincode, String Professionalfees,
-			String assignedtoName, String BDAgentName, String CrossSaleName, String GRCMobileNumber,
-			String CrmUsernames, String CrmUserpassword, ExtentReports extentreport)
+	public CriticalFlowDetail(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String GRCNewCompanyName,
+			String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName,String CrossSaleName)
 			throws InterruptedException, AWTException,ElementClickInterceptedException {
 		Robot robot = new Robot();
 
@@ -102,7 +100,8 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "no lead is Create a ticket from the vakilsearch.com");
 		}
-
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Payment key = new Payment(driver, test);
 		System.out.println(e);
 		driver.get("https://helpdesk.vakilsearch.com/login");
 
@@ -152,6 +151,36 @@ public class CriticalFlowDetail extends HelpdeskPageobject {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		Updateticket.click();
+		Thread.sleep(3000);
+		try{
+		CrosssaleCTA.click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(1500);
+		Selectcrosssale.click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(1500);
+		Selectcrosssale.sendKeys(CrossSaleName);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(1500);
+		Createcrosssale.click();
+		Thread.sleep(2500);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_R);
+		robot.keyPress(KeyEvent.VK_R);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		test.log(Status.PASS, "Cross sale creation success");
+	} catch (Exception Crosssale1) {
+		test.log(Status.FAIL, "Cross sale creation Failed");
+	}
+	Thread.sleep(5000);
+	robot.keyPress(KeyEvent.VK_CONTROL);
+	robot.keyRelease(KeyEvent.VK_R);
+	robot.keyPress(KeyEvent.VK_R);
+	robot.keyRelease(KeyEvent.VK_CONTROL);
+
+	
 		Thread.sleep(2000);
 		driver.get("https://grc.vakilsearch.com/grc/login");
 		Thread.sleep(5000);

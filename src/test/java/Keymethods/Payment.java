@@ -73,7 +73,7 @@ public class Payment extends HomescreenPageobject {
 //		}
 
 		Thread.sleep(4000);
-		}catch(NoSuchElementException payment1){
+		}catch(Exception payment1){
 			TakesScreenshot scrShot =((TakesScreenshot)driver);
 			File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 			test.log(Status.FAIL, "Whole payment failed");

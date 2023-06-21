@@ -32,33 +32,33 @@ public GRCRegression(WebDriver driver) {
 
 //}
 public void OnboardingFlowForExistingUsers(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String  GRCNewCompanyName,
-		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName) throws ElementClickInterceptedException, InterruptedException, AWTException {
+		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName,String CrossSaleName) throws ElementClickInterceptedException, InterruptedException, AWTException {
 	GrcExpand grcexpand = new GrcExpand(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);
 
 }
 public void RedactedMail(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String  GRCNewCompanyName,
-String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName) throws ElementClickInterceptedException, InterruptedException, AWTException {
+String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName,String CrossSaleName) throws ElementClickInterceptedException, InterruptedException, AWTException {
 	GrcExpand grcexpand = new GrcExpand(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);
 
 }
 public void CreateNewAccountUsingGRCURL(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String  GRCNewCompanyName,
-		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName) throws ElementClickInterceptedException, InterruptedException, AWTException {
+		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName,String CrossSaleName) throws ElementClickInterceptedException, InterruptedException, AWTException {
 	GrcExpand grcexpand4= new GrcExpand(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);
 
 }  
 public void ExistingUserLoggedInThruGRC(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String  GRCNewCompanyName,
-		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName) throws ElementClickInterceptedException, InterruptedException, AWTException {
+		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName,String CrossSaleName) throws ElementClickInterceptedException, InterruptedException, AWTException {
 	GrcExpand grcexpand5 = new GrcExpand(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);
 
 }
 public void ComplianceReminderMail(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String  GRCNewCompanyName,
-		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName) throws ElementClickInterceptedException, InterruptedException, AWTException {
+		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName,String CrossSaleName) throws ElementClickInterceptedException, InterruptedException, AWTException {
 	GrcExpand grcexpand6 = new GrcExpand(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);
 
 
 }

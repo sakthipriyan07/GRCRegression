@@ -13,10 +13,11 @@ import PageFactory.HelpdeskPageobject;
 public class GrcExpand extends HelpdeskPageobject{
 	
 public GrcExpand(WebDriver driver,ExtentReports extentreport,String GRCMobileNumber,String  GRCNewCompanyName,
-		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName) throws ElementClickInterceptedException, InterruptedException, AWTException {
+		String CINNumber,String Helpdeskuserid,String helpdeskpassword,String assignedtoName ,String CrossSaleName) throws ElementClickInterceptedException, InterruptedException, AWTException {
 GRCPage grcpage = new GRCPage(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
-CriticalFlowDetail criticalflow = new CriticalFlowDetail(driver, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, assignedtoName, extentreport);		
+		CINNumber);
+CriticalFlowDetail criticalflow = new CriticalFlowDetail( driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
+		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);		
 
 	
 }

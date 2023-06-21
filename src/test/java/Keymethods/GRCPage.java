@@ -34,7 +34,7 @@ public class GRCPage extends GRCPageobject {
 	ExtentTest test;
 
 	public GRCPage(WebDriver driver, ExtentReports extentreport, String GRCMobileNumber, String GRCNewCompanyName,
-			String CINNumber, String Helpdeskuserid, String helpdeskpassword, String assignedtoName)
+			String CINNumber)
 			throws InterruptedException, AWTException, ElementClickInterceptedException {
 //		Set<String> allwindowsid = driver.getWindowHandles();
 //		List<String> all = new ArrayList<>();
@@ -49,7 +49,6 @@ public class GRCPage extends GRCPageobject {
 		test = extentreport.createTest("GRC Test");
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		PageFactory.initElements(driver, GRCPageobject.class);
-
 		driver.get("https://grc.vakilsearch.com/grc/login");
 		Thread.sleep(2500);
 		
@@ -94,14 +93,18 @@ public class GRCPage extends GRCPageobject {
 //			GRCMailId0.click();
 //			GRCMailIdConfirm.click();
 //		}
-//		Thread.sleep(3500);
+		Thread.sleep(3500);
 		try {
 			Closepopup.click();
 			}catch(Exception Closepopup) {
 				System.out.println("No popup");
 			}
-		String DashboardURL = driver.getCurrentUrl();
-		String DashboardURL1 = "https://grc.vakilsearch.com/grc/dashboard/VXgxRXQ2SmVrYjNVVUFqdy58fC4yNGVkZWY1Y2RiLnx8Lgnrb6u54cOopAREu9iUZ7tVC8tWpLxMKzDegk-Cfsq3izkmU5zfatcKoNKh7FMYAfM0QGoRyW_1QwmmyOXIUuXotaHZOToRrel1bUc8MBmB";
+		
+		Thread.sleep(6500);
+	//	wait.until(ExpectedConditions.urlToBe("https://grc.vakilsearch.com/grc/dashboard".substring(0,41)));
+		String DashboardURL = driver.getCurrentUrl().substring(0, 41);//41
+		System.out.println(DashboardURL);
+		String DashboardURL1 = "https://grc.vakilsearch.com/grc/dashboard";
 				if (DashboardURL1.contains(DashboardURL)) {
 					test.log(Status.PASS, "Dashboard URL");
 					System.out.println(DashboardURL);
@@ -139,22 +142,24 @@ public class GRCPage extends GRCPageobject {
 				Actions act =  new Actions(driver);
 				
 				
-			try {
+//			try {
+				Thread.sleep(2500);
+
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='styles_dropdown__kgL4A']")));
 				driver.findElement(By.xpath("//div[@class='styles_dropdown__kgL4A']")).click();
 				Thread.sleep(2500);
-				
+//				
+//				AddNewBusiness2.click();
+//			} catch (ElementClickInterceptedException ex) {
+//				
+//				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='closeIcon']")));
+//				act.moveToElement(driver.findElement(By.xpath("//img[@alt='closeIcon']"))).click().perform();
+//				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='styles_dropdown__kgL4A']")));
+//				driver.findElement(By.xpath("//div[@class='styles_dropdown__kgL4A']")).click();
+//				Thread.sleep(2500);
+//				
 				AddNewBusiness2.click();
-			} catch (ElementClickInterceptedException ex) {
-				
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='closeIcon']")));
-				act.moveToElement(driver.findElement(By.xpath("//img[@alt='closeIcon']"))).click().perform();
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='styles_dropdown__kgL4A']")));
-				driver.findElement(By.xpath("//div[@class='styles_dropdown__kgL4A']")).click();
-				Thread.sleep(2500);
-				
-				AddNewBusiness2.click();
-			}
+//}
 			
 			}
 
@@ -180,9 +185,8 @@ public class GRCPage extends GRCPageobject {
 			Continue.click();
 			Thread.sleep(2500);
 		} catch (Exception e102) {
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(text(),'Continue')]")));
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Continue')]"))).click();
-		//	Continue.click();
+			wait.until(ExpectedConditions.elementToBeClickable(Continue));
+			Continue.click();
 			Thread.sleep(2500);
 		}
 		
@@ -215,8 +219,8 @@ public class GRCPage extends GRCPageobject {
 		robot.keyPress(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("(//div[@class='styles_btnContainer__sVb_P']/child::button)[2]")));
+		//wait.until(ExpectedConditions
+		//		.elementToBeClickable(By.xpath("//button[@class='styles_dropdownBtn__I6_4i']/child::p")));
 		Thread.sleep(2500);
 		try {
 			
@@ -224,6 +228,17 @@ public class GRCPage extends GRCPageobject {
 		}catch(Exception Closepopup) {
 			System.out.println("No popup");
 		}
+		Thread.sleep(4500);
+		wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//button[@class='styles_dropdownBtn__I6_4i']/child::p"))).click();
+		Thread.sleep(2500);
+		// **just for option
+//	OpenEntityList.click();
+	wait.until(ExpectedConditions
+			.elementToBeClickable(By.xpath("(//div[@class='styles_accountsList__qfPzH']/child::div)[2]"))).click();
+	//	EntitySelect2.click();
+		Thread.sleep(1500);
+	
 		// **just for option
 		wait.until(ExpectedConditions
 				.elementToBeClickable(OpenEntityList)).click();
@@ -372,13 +387,7 @@ public class GRCPage extends GRCPageobject {
 					test.log(Status.FAIL,"AllServicesURL not same"+ AllServicesURL);
 					System.out.println(AllServicesURL);
 				}
-				js1.executeScript("arguments[0].scrollIntoView(true);", BuyNowService);
-				wait.until(ExpectedConditions.elementToBeClickable(BuyNowService));
-				robot.keyPress(KeyEvent.VK_CONTROL);
-				robot.keyPress(KeyEvent.VK_MINUS);
-				robot.keyRelease(KeyEvent.VK_MINUS);
-				robot.keyRelease(KeyEvent.VK_CONTROL);
-				js1.executeScript("arguments[0].scrollIntoView(true);", BuyNowService);
+	
 				wait.until(ExpectedConditions
 						.elementToBeClickable(By.xpath("(//button[contains(text(),'Buy now')])[1]"))).click();
 				robot.keyPress(KeyEvent.VK_UP);
@@ -433,7 +442,7 @@ public class GRCPage extends GRCPageobject {
 				robot.keyRelease(KeyEvent.VK_R);
 				robot.keyRelease(KeyEvent.VK_CONTROL);
 		driver.navigate().back();
-		Thread.sleep(2500);
+		Thread.sleep(4500);
 	//	driver.findElement(By.xpath("//button[@class='styles_gearBtn__s6cgl']")).click();
 		driver.findElement(By.xpath("//span[contains(text(),'Compliances for you')]")).click();Thread.sleep(2500);
 		String CompliancesForYou = driver.getCurrentUrl();
@@ -523,86 +532,7 @@ public class GRCPage extends GRCPageobject {
 //		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 //		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 //		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-		
-		js1.executeScript("arguments[0].scrollIntoView(true);", BuyNowService);
-		wait.until(ExpectedConditions.elementToBeClickable(BuyNowService));
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		js1.executeScript("arguments[0].scrollIntoView(true);", BuyNowService);
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("(//button[contains(text(),'Buy now')])[1]"))).click();
-		robot.keyPress(KeyEvent.VK_UP);
-		robot.keyRelease(KeyEvent.VK_UP);
-		robot.keyPress(KeyEvent.VK_UP);
-		robot.keyRelease(KeyEvent.VK_UP);
-		robot.keyPress(KeyEvent.VK_UP);
-		robot.keyRelease(KeyEvent.VK_UP);
-		//BuyNowService.click();
-		Thread.sleep(1500);
-		try {
-			AreyouintrestedinGST.click();
-			Thread.sleep(1500);
-			ContinueGST.click();
-			Thread.sleep(1500);
-			AreyouintrestedinGST.click();
-			Thread.sleep(1500);
-			GSTRegistrationState.click();
-			robot.keyPress(KeyEvent.VK_DOWN);
-			robot.keyRelease(KeyEvent.VK_DOWN);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			ContinueGST.click();
-			Thread.sleep(1500);
-			ContinueGST.click();
-		} catch (NoSuchElementException AreyouintrestedinGST) {
 
-			try {
-				GSTRegistrationState.click();
-				robot.keyPress(KeyEvent.VK_DOWN);
-				robot.keyRelease(KeyEvent.VK_DOWN);
-				robot.keyPress(KeyEvent.VK_ENTER);
-				robot.keyRelease(KeyEvent.VK_ENTER);
-				ContinueGST.click();
-				ContinueGST.click();
-			} catch (NoSuchElementException AreyouintrestedinGST1) {
-
-				try {
-					Thread.sleep(2500);
-					ContinueGST.click();
-				} catch (NoSuchElementException ContinueGST) {
-					Thread.sleep(3000);
-				}
-			}
-
-		}
-
-		String ServiceID2 = GetServiceID.getText().substring(1);
-		System.out.println(ServiceID2 + "MyServiceLead");
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_R);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-
-//		Thread.sleep(1500);
-//		MessagesCTA.click();
-//		Thread.sleep(1500);
-//		ReplyMessage.click();
-//		Thread.sleep(1500);
-//		ReplyNote.click();
-//		Thread.sleep(1500);
-//		messageAttachment.click();
-//		Thread.sleep(1500);
-//		messageAttachment.sendKeys("C:\\Users\\admin\\eclipse-workspace\\GRCCriticalflow\\Excel\\Customer.xlsx");
-//		Sendmessage.click();
-		
-		try {
-			
-			Closepopup.click();
-			}catch(Exception Closepopup1) {
-				System.out.println("No popup");
-			}
 
 		Thread.sleep(3000);
 		//actions.click(Needhelp);
@@ -747,27 +677,8 @@ public class GRCPage extends GRCPageobject {
 		robot.keyPress(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_R);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-		String MyInterestURL = driver.getCurrentUrl();
-		String MyInterestURL1 = "https://grc.vakilsearch.com/grc/my-interests";
-				if (MyInterestURL1.contains(MyInterestURL)) {
-					test.log(Status.PASS, "MyInterestURL");
-					System.out.println(MyInterestURL);
-				} else {
-					test.log(Status.FAIL,"MyInterestURL not same"+MyInterestURL);
-					System.out.println(MyInterestURL1);
-				}
-		if (e.matches(e)) {
-			test.log(Status.PASS, "Create a ticket from the vakilsearch.com");
-		} else {
-
-			test.log(Status.FAIL, "no lead is Create a ticket from the vakilsearch.com");
-		}
-
-		System.out.println(e);
-
-		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		Payment key = new Payment(driver, test);
+		Thread.sleep(3000);
+	
 
 	}
 

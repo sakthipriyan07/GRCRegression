@@ -117,7 +117,7 @@ public class GRCRegressionRun {
 	//	grcregression.OnboardingFlowForNewUsers(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
 	  //  		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
 		grcregression.OnboardingFlowForExistingUsers(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
-	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
+	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName,CrossSaleName);
 //		grcregression.RedactedMail(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
 //	    		CINNumber,Helpdeskuserid,helpdeskpassword,assignedtoName);
 //		grcregression.CreateNewAccountUsingGRCURL(driver,extentreport,GRCMobileNumber,GRCNewCompanyName,
