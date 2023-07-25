@@ -3,7 +3,8 @@ package GRCFlowRun;
 import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import MainBase.*;
 
@@ -79,8 +80,11 @@ public class GRCRegressionRun {
 
 	@BeforeSuite
 	public void Login() throws InterruptedException, AWTException {
-		extentreport = new ExtentReports();
-		htmlReporter = new ExtentSparkReporter("extentreport.html");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
+		String Date1 = dateFormat.format(new Date());
+			extentreport = new ExtentReports();
+			htmlReporter = new ExtentSparkReporter("\\\\14.140.167.188\\Vakilsearch\\GRCRegressionAutomation\\"+Date1+"\\extentreport.html");
+	
 		extentreport.attachReporter(htmlReporter);
 
 	}
@@ -131,7 +135,7 @@ public class GRCRegressionRun {
 
 	@AfterClass
 	public void close() {
-		// driver.close();
+		 //driver.close();
 		System.out.println("The close_up process is completed");
 
 	}

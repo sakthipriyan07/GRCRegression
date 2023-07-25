@@ -47,7 +47,8 @@ try {
 		//i[@class='fa-fw far vs-tickets']
 		Thread.sleep(2500);
 		CrmSearchforticketsIDorsubject.click();
-		CrmSearchforticketsIDorsubject.sendKeys(e);
+		//CrmSearchforticketsIDorsubject.sendKeys(e);3354343
+		CrmSearchforticketsIDorsubject.sendKeys("3354343");
 		Thread.sleep(2500);
 		CrmFirstTicketSelect.click();
 //		String InternalNotes = CrmInternalNote.getText();

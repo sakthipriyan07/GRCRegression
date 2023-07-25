@@ -178,6 +178,81 @@ public class GRCPageobject extends HelpdeskPageobject{
 	@FindBy(xpath = "//input[@name='name']")
 	public static WebElement personalprofilename;
 	
+
+	
+	@FindBy(xpath = "(//div[@class='styles_container__BL2LZ false']/child::div)[1]")
+	public static WebElement Closehelp1;
+	
+	@FindBy(xpath = "//h3[contains(text(),'First time in India. Only on Zolvit.')]")
+	public static WebElement FirstTimeInIndia;
+	
+	@FindBy(xpath = "//div[@class='styles_imgWrapper__uoce0']/child::img")
+	public static WebElement Closehelp2;
+	
+	@FindBy(xpath = "(//div[@class='styles_footer__lphBw']//u[contains(text(),'Know more')])[1]")
+	public static WebElement Knowmore;
+	
+	@FindBy(xpath = "(//div[@class='styles_footer__lphBw']//button[contains(text(),' Unlock now')])[1]")
+	public static WebElement Unlocknow	;
+	
+	@FindBy(xpath = "//button[@class='styles_closeBtn__ULw05']")
+	public static WebElement KnowmoreClosePopup;
+	
+	@FindBy(xpath = "//div[@class='styles_title-container__bb51p']/child::img")
+	public static WebElement UnlocknowClosePopup;
+	
+	@FindBy(xpath = "//button[contains(text(),'Completed')]")
+	public static WebElement MyserviceCompleted;
+	
+	@FindBy(xpath = "//button[contains(text(),'Discontinued')]")
+	public static WebElement MyserviceDiscontinued;
+	
+	@FindBy(xpath = "//div[@class='styles_title-container__bb51p']/child::img")
+	public static WebElement MyserviceExpired;
+	
+	@FindBy(xpath = "//div[@class='unMappedServices_widgetEnd__aqc5o']/child::img")
+	public static WebElement UnlikedDownArrow;
+	
+	@FindBy(xpath = "(//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary  css-1b18ji1'])[1]")
+	public static WebElement SelectBusinessToLinkCTA;
+	
+	@FindBy(xpath = "//li[contains(text(),'TATA COMMUNICATIONS LIMITED')]")
+	public static WebElement TCSSelectbusinessToLink;
+	
+	@FindBy(xpath = "//button[contains(text(),'Confirm linking')]")
+	public static WebElement ConfirmLinking;
+	
+	@FindBy(xpath = "(//p[contains(text(),'Know more')])[1]")
+	public static WebElement MyintrestKnowmore;
+	
+	@FindBy(xpath = "//div[@class='styles_container__6vyhB']/child::img")
+	public static WebElement MyintrestKnowMorePopupClose;
+	
+	@FindBy(xpath = "//input[@placeholder='Search all services']")
+	public static WebElement SearchAllSevice;
+	
+	@FindBy(xpath = "//li[contains(text(),'Online Company Registration')]")
+	public static WebElement Onlinecompanyregstration;
+	
+	@FindBy(xpath = "//p[@class='styles_title__QEOoZ']")
+	public static WebElement Topservices;
+	
+	@FindBy(xpath = "//button[@class='styles_knowMore__TKFN4']")
+	public static WebElement TopserviceKnowmore;
+	
+	@FindBy(xpath = "//span[contains(text(),'Home')]")
+	public static WebElement Home;
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
