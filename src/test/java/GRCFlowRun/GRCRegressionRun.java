@@ -44,7 +44,7 @@ import jxl.read.biff.BiffException;
 public class GRCRegressionRun {
 
 	ExtentReports extentreport;
-	ExtentSparkReporter htmlReporter;
+	ExtentSparkReporter htmlReporter;   
 	ExtentTest testcase;
  
 	String[][] data = null;
